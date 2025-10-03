@@ -1,0 +1,19 @@
+/* Navbar - light blue theme */
+.navbar-light-custom {
+    background-color: #cfe2ff; /* light blue */
+}
+
+    .navbar-light-custom .navbar-brand,
+    .navbar-light-custom .nav-link {
+        color: #0b3d91; /* dark navy text */
+    }
+
+        .navbar-light-custom .nav-link:hover {
+            color: #d4a017; /* muted gold on hover */
+        }
+
+        /* Optional: active link highlight */
+        .navbar-light-custom .nav-link.active {
+            font-weight: 600;
+            color: #0b3d91;
+        }

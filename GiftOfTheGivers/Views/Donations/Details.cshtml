@@ -1,0 +1,14 @@
+﻿@model GiftOfTheGivers.Models.Donation
+@{
+    ViewData["Title"] = "Donation Details";
+}
+<h3>Donation Details</h3>
+<div class="card p-3">
+    <p><strong>Resource:</strong> @Model.ResourceType</p>
+    <p><strong>Quantity/Description:</strong> @Model.QuantityDescription</p>
+    <p><strong>Donor:</strong> @Model.DonorName</p>
+    <p><strong>Contact:</strong> @Model.ContactInfo</p>
+    <p><strong>Pickup:</strong> @Model.PickupLocation</p>
+    <p><strong>Date:</strong> @Model.DonationDate.ToString("g")</p>
+</div>
+<p><a class="btn btn-secondary" asp-action="Index">Back to list</a></p>

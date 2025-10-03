@@ -1,0 +1,34 @@
+﻿@model IEnumerable<GiftOfTheGivers.Models.IncidentReport>
+@{
+    ViewData["Title"] = "Incident Reports";
+}
+
+<h2>Incident Reports</h2>
+
+<p><a class="btn btn-success" asp-action="Create">Report New Incident</a></p>
+
+<table class="table table-striped table-bordered">
+    <thead class="table-dark">
+        <tr><th>Type</th><th>Location</th><th>Urgency</th><th>Date</th><th>Reported By</th><th>Actions</th></tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.IncidentType</td>
+                <td>@item.Location</td>
+                <td>@item.UrgencyLevel</td>
+                <td>@item.ReportDate.ToString("g")</td>
+                <td>@item.ReportedByUser?.UserName</td>
+                <td>
+                    <a class="btn btn-info btn-sm" asp-action="Details" asp-route-id="@item.ReportId">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-warning">No incident reports yet.</div>
+}

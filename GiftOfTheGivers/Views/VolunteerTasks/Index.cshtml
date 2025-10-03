@@ -1,0 +1,38 @@
+﻿@model IEnumerable<GiftOfTheGivers.Models.VolunteerTask>
+@{
+    ViewData["Title"] = "Volunteer Tasks";
+}
+
+<h2>Volunteer Tasks</h2>
+
+<!-- Create button (only visible to admins) -->
+@if (User.IsInRole("Admin"))
+{
+    <a asp-controller="VolunteerTasks" asp-action="Create" class="btn btn-primary mb-3">Create Task</a>
+}
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Assignments</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var task in Model)
+        {
+            <tr>
+                <td>@task.Title</td>
+                <td>@task.Description</td>
+                <td>@task.Status</td>
+                <td>@task.Assignments.Count()</td>
+                <td>
+                    <a asp-controller="VolunteerTasks" asp-action="Details" asp-route-id="@task.TaskId" class="btn btn-info btn-sm">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

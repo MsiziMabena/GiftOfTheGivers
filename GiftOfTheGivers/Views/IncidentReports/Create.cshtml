@@ -1,0 +1,51 @@
+﻿@model GiftOfTheGivers.Models.IncidentReport
+@{
+    ViewData["Title"] = "Report Incident";
+}
+<div class="card p-4">
+    <h3>Report an Incident</h3>
+    <form asp-action="Create" method="post">
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        <div class="mb-3">
+            <label asp-for="IncidentType" class="form-label"></label>
+            <select asp-for="IncidentType" class="form-select">
+                <option value="">-- Select --</option>
+                <option>Flood</option>
+                <option>Fire</option>
+                <option>Earthquake</option>
+                <option>Other</option>
+            </select>
+            <span asp-validation-for="IncidentType" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Location" class="form-label"></label>
+            <input asp-for="Location" class="form-control" />
+            <span asp-validation-for="Location" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="UrgencyLevel" class="form-label"></label>
+            <select asp-for="UrgencyLevel" class="form-select">
+                <option value="">-- Select --</option>
+                <option>High</option>
+                <option>Medium</option>
+                <option>Low</option>
+            </select>
+            <span asp-validation-for="UrgencyLevel" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Description" class="form-label"></label>
+            <textarea asp-for="Description" class="form-control" rows="5"></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit Report</button>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,70 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="container mt-5">
+    <!-- Hero Section -->
+    <div class="row align-items-center mb-5">
+        <div class="col-md-6">
+            <h1 class="display-4 fw-bold" style="color:#0b3d91;">Gift Of The Givers Foundation</h1>
+            <p class="lead" style="color:#444;">
+                Supporting communities in need, responding to disasters, and providing critical aid
+                wherever it’s needed most.
+            </p>
+            <a class="btn btn-warning btn-lg" asp-controller="IncidentReports" asp-action="Create">Report an Incident</a>
+            <a class="btn btn-outline-primary btn-lg ms-2" asp-controller="Donations" asp-action="Create">Donate Resources</a>
+        </div>
+        <div class="col-md-6 text-center">
+            <img src="~/images/disaster-relief.png" class="img-fluid rounded shadow" alt="Disaster Relief">
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="row text-center">
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold" style="color:#0b3d91;">Incident Reporting</h5>
+                    <p class="card-text">
+                        Quickly report disasters or emergencies in your area so our team can respond promptly.
+                    </p>
+                    <a class="btn btn-outline-warning" asp-controller="IncidentReports" asp-action="Index">View Reports</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold" style="color:#0b3d91;">Resource Donations</h5>
+                    <p class="card-text">
+                        Donate food, clothing, or medical supplies to help communities affected by disasters.
+                    </p>
+                    <a class="btn btn-outline-warning" asp-controller="Donations" asp-action="Index">View Donations</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold" style="color:#0b3d91;">Volunteer</h5>
+                    <p class="card-text">
+                        Join our volunteer network to assist in emergency responses and ongoing aid programs.
+                    </p>
+                    <a class="btn btn-outline-warning" asp-controller="VolunteerTasks" asp-action="Index">Volunteer Tasks</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="row mt-5">
+        <div class="col-md-12 text-center">
+            <h2 class="fw-bold" style="color:#0b3d91;">About Gift Of The Givers</h2>
+            <p class="lead" style="color:#444;">
+                Gift Of The Givers Foundation is dedicated to disaster relief and community support.
+                Founded with a mission to help those in crisis, we respond swiftly and efficiently
+                to natural disasters and emergencies worldwide.
+            </p>
+        </div>
+    </div>
+</div>

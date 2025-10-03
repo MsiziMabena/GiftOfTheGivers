@@ -1,0 +1,49 @@
+﻿@model GiftOfTheGivers.Models.Donation
+@{
+    ViewData["Title"] = "Add Donation";
+}
+
+<h3>Add Donation</h3>
+<form asp-action="Create" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="mb-3">
+        <label asp-for="ResourceType" class="form-label"></label>
+        <select asp-for="ResourceType" class="form-select">
+            <option>Food</option>
+            <option>Clothing</option>
+            <option>Medical</option>
+            <option>Other</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="QuantityDescription" class="form-label"></label>
+        <input asp-for="QuantityDescription" class="form-control" />
+        <span asp-validation-for="QuantityDescription" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="DonorName" class="form-label"></label>
+        <input asp-for="DonorName" class="form-control" />
+        <span asp-validation-for="DonorName" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="ContactInfo" class="form-label"></label>
+        <input asp-for="ContactInfo" class="form-control" />
+        <span asp-validation-for="ContactInfo" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="PickupLocation" class="form-label"></label>
+        <input asp-for="PickupLocation" class="form-control" />
+        <span asp-validation-for="PickupLocation" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit Donation</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
